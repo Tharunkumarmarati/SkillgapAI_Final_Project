@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skill Gap Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h2>Skill Gap Analysis Interface</h2>
+</header>
+
+<div class="container">
+
+    <form method="POST" enctype="multipart/form-data" class="upload">
+        <input type="file" name="resume" required>
+        <button>Analyze</button>
+    </form>
+
+    {% if show %}
+    <div class="grid">
+
+        <!-- LEFT -->
+        <div class="card">
+            <h3>Similarity Matrix</h3>
+            {{ matrix | safe }}
+        </div>
+
+        <!-- RIGHT -->
+        <div class="card">
+            <h3>Skill Match Overview</h3>
+
+            <div class="stats">
+                <div class="stat">{{ overall }}%<span>Overall Match</span></div>
+                <div class="stat">{{ matched|length }}<span>Matched</span></div>
+                <div class="stat">{{ partial|length }}<span>Partial</span></div>
+                <div class="stat">{{ missing|length }}<span>Missing</span></div>
+            </div>
+
+            {{ donut | safe }}
+        </div>
+
+    </div>
+
+    <div class="card">
+        <h3>Missing Skills</h3>
+        {% for s in missing %}
+            <div class="missing">{{ s }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+</div>
+</body>
+</html>

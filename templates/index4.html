@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SkillGapAI - Analysis Dashboard</title>
+    <link rel="stylesheet" href="templates/style4.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+<div class="dashboard-container">
+    <header class="header">
+        <h1>Skill Gap Analysis Dashboard</h1>
+        <div class="header-btns">
+            <button class="btn secondary">Refresh</button>
+            <button class="btn primary">Settings</button>
+        </div>
+    </header>
+
+    <div class="grid-layout">
+        <section class="card overview">
+            <h3><i class="icon">📈</i> Skill Match Overview</h3>
+            <div class="kpi-row">
+                <div class="kpi">
+                    <span class="value">{{ overall }}%</span>
+                    <span class="label">Overall Match</span>
+                </div>
+                <div class="kpi">
+                    <span class="value">{{ matched_len }}</span>
+                    <span class="label">Matched Skills</span>
+                </div>
+                <div class="kpi">
+                    <span class="value">{{ missing_len }}</span>
+                    <span class="label">Missing Skills</span>
+                </div>
+            </div>
+            <div id="bar-chart" class="chart-container">
+                {{ bar_chart_html | safe }}
+            </div>
+        </section>
+
+        <section class="card role-view">
+            <h3><i class="icon">👤</i> Role View</h3>
+            <div class="toggle-btns">
+                <button class="active">Job Seeker</button>
+                <button>Recruiter</button>
+            </div>
+            <div id="radar-chart" class="chart-container">
+                {{ radar_chart_html | safe }}
+            </div>
+        </section>
+
+        <section class="card comparison">
+            <h3><i class="icon">⚖️</i> Skill Comparison</h3>
+            {% for skill in skill_data %}
+            <div class="comparison-item">
+                <span class="skill-name">{{ skill.name }}</span>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: {{ skill.match_pct }}%;"></div>
+                </div>
+                <span class="pct">{{ skill.match_pct }}%</span>
+            </div>
+            {% endfor %}
+        </section>
+
+        <section class="card recommendations">
+            <h3><i class="icon">💡</i> Upskilling Recommendations</h3>
+            {% for reco in recommendations %}
+            <div class="reco-item">
+                <div class="reco-icon">{{ reco.icon }}</div>
+                <div class="reco-details">
+                    <strong>{{ reco.title }}</strong>
+                    <p>{{ reco.desc }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+</div>
+
+</body>
+</html>

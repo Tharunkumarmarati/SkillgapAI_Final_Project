@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skill Extraction using NLP</title>
+    <link rel="stylesheet" href="/static/style2.css">
+</head>
+<body>
+
+<h1>Skill Extraction using NLP</h1>
+<p class="subtitle">Milestone 2 – Resume Skill Analysis</p>
+
+<form method="post" enctype="multipart/form-data" class="upload-box">
+    <input type="file" name="resume" required>
+    <button type="submit">Upload & Extract Skills</button>
+</form>
+
+{% if tech_skills %}
+<div class="card">
+    <h2>Technical Skills</h2>
+    <div class="tags">
+        {% for skill, score in tech_skills %}
+            <span class="tag tech">{{ skill }}</span>
+        {% endfor %}
+
+    </div>
+</div>
+{% endif %}
+
+{% if soft_skills %}
+<div class="card">
+    <h2>Soft Skills</h2>
+    <div class="tags">
+        {% for skill, score in soft_skills %}
+            <span class="tag soft">{{ skill }}</span>
+        {% endfor %}
+
+    </div>
+</div>
+{% endif %}
+
+</body>
+</html>

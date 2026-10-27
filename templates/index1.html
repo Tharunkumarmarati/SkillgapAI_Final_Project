@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume & JD Parser</title>
+    <link rel="stylesheet" href="/static/style1.css">
+</head>
+<body>
+
+<h1>Milestone 1: Data Ingestion and Parsing</h1>
+
+<form method="post" enctype="multipart/form-data">
+
+    <div class="upload-section">
+        <label><b>Upload Resume</b></label><br>
+        <input type="file" name="resume">
+    </div>
+
+    <div class="upload-section">
+        <label><b>Upload Job Description</b></label><br>
+        <input type="file" name="jd">
+    </div>
+
+    <button type="submit">Upload & Parse</button>
+</form>
+
+<hr>
+
+{% if resume_text %}
+<div class="stats">
+    <h3>Resume Stats</h3>
+    <p><b>Words:</b> {{ resume_words }}</p>
+    <p><b>Characters:</b> {{ resume_chars }}</p>
+</div>
+
+<div class="preview">
+    <h3>Parsed Resume Preview</h3>
+    <pre>{{ resume_text }}</pre>
+</div>
+{% endif %}
+
+{% if jd_text %}
+<div class="stats">
+    <h3>Job Description Stats</h3>
+    <p><b>Words:</b> {{ jd_words }}</p>
+    <p><b>Characters:</b> {{ jd_chars }}</p>
+</div>
+
+<div class="preview">
+    <h3>Parsed Job Description Preview</h3>
+    <pre>{{ jd_text }}</pre>
+</div>
+{% endif %}
+
+</body>
+</html>
