@@ -1,0 +1,12 @@
+flask
+pdfplumber
+python-docx
+matplotlib
+seaborn
+plotly
+streamlit
+pandas
+numpy
+PyPDF2
+scikit-learn
+reportlab
