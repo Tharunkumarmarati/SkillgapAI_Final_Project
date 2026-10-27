@@ -1,0 +1,28 @@
+John Doe
+Senior Data Scientist
+
+Contact:
+Email: john.doe@email.com
+Phone: +91-9876543210
+LinkedIn: linkedin.com/in/johndoe
+
+Professional Summary:
+Experienced Data Scientist with 5+ years of experience in machine learning,
+data analysis, and predictive modeling. Skilled in extracting insights from
+large datasets and building scalable ML solutions.
+
+Skills:
+Python
+Machine Learning
+Data Analysis
+SQL
+TensorFlow
+Data Visualization
+
+Education:
+B.Tech in Computer Science
+XYZ University
+
+Experience:
+Senior Data Scientist at ABC Corp
+Worked on predictive analytics and AI-driven decision systems.
