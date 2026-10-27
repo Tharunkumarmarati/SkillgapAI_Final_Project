@@ -1,0 +1,113 @@
+:root {
+    --primary-blue: #4f46e5;
+    --success-green: #10b981;
+    --warning-orange: #f59e0b;
+    --danger-red: #ef4444;
+    --bg-gray: #f8fafc;
+    --text-dark: #1e293b;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-gray);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 20px;
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.header h1 { font-size: 24px; color: #3b82f6; }
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.primary { background: #3b82f6; color: white; }
+.secondary { background: white; color: #3b82f6; border: 1px solid #3b82f6; margin-right: 10px; }
+
+/* Grid Layout */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+}
+
+.card h3 { margin-top: 0; font-size: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px; }
+
+/* KPI Section */
+.kpi-row {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.kpi { text-align: center; }
+.kpi .value { display: block; font-size: 24px; font-weight: bold; color: #3b82f6; }
+.kpi .label { font-size: 12px; color: #64748b; }
+
+/* Progress Bars */
+.comparison-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.skill-name { width: 120px; font-size: 14px; }
+
+.progress-container {
+    flex-grow: 1;
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 5px;
+    margin: 0 15px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--success-green);
+    border-radius: 5px;
+}
+
+/* Recommendations */
+.reco-item {
+    display: flex;
+    padding: 12px;
+    background: #f1f5f9;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.reco-icon { margin-right: 15px; font-size: 20px; }
+.reco-details strong { display: block; font-size: 14px; }
+.reco-details p { margin: 4px 0 0; font-size: 12px; color: #64748b; }
+
+/* Charts */
+.chart-container {
+    width: 100%;
+    min-height: 250px;
+}
